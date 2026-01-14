@@ -7,11 +7,19 @@
 ================================ */
 
 @theme {
-  --color-primary: #1b0f2e;      /* Dark Purple */
-  --color-surface: #24133d;      /* Card background */
-  --color-gold: #f5c77a;         /* Main gold */
-  --color-gold-soft: #e6b566;    /* Secondary gold */
+  /* Brand colors */
+  --color-primary: #4e2780;      /* INFIVITY Purple */
+  --color-accent: #ffde59;       /* Gold highlight */
 
+  /* Backgrounds */
+  --color-bg: #f6f8ff;           /* Bluish white */
+  --color-surface: #ffffff;      /* Cards / surfaces */
+
+  /* Text */
+  --color-text-dark: #1f1f2e;
+  --color-text-muted: #5b5f7a;
+
+  /* Radius */
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
 }
@@ -22,14 +30,14 @@
 
 html,
 body {
-  background-color: var(--color-primary);
-  color: var(--color-gold);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
   scroll-behavior: smooth;
 }
 
-
 /* ================================
    Subtle Background Accents
+   (Light-mode friendly, premium)
 ================================ */
 
 body::before {
@@ -41,13 +49,50 @@ body::before {
 
   background:
     radial-gradient(
-      600px 400px at 20% 10%,
-      rgba(245, 199, 122, 0.06),
+      700px 450px at 15% 10%,
+      rgba(78, 39, 128, 0.08),
       transparent 60%
     ),
     radial-gradient(
-      500px 300px at 80% 20%,
-      rgba(245, 199, 122, 0.04),
+      600px 400px at 85% 20%,
+      rgba(255, 222, 89, 0.12),
       transparent 60%
     );
+}
+
+
+/* ================================
+   Text Color Mixing Utilities
+================================ */
+
+/* Gradient heading text */
+.text-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Softer gradient (less contrast) */
+.text-gradient-soft {
+  background: linear-gradient(
+    120deg,
+    rgba(78, 39, 128, 0.9),
+    rgba(255, 222, 89, 0.85)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold accent text */
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Purple emphasis */
+.text-primary {
+  color: var(--color-primary);
 }

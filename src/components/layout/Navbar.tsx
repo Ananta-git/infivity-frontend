@@ -15,15 +15,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[color:var(--color-primary)] border-b border-[color:var(--color-gold-soft)/20]">
+<nav className="
+  fixed top-0 w-full z-50
+  bg-white/70 backdrop-blur-xl
+  border-b border-black/5
+  ">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold tracking-wide">
+        <div className="text-[color:var(--color-primary)] text-xl font-bold tracking-wide">
           INFIVITY
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-sm font-medium">
+        <ul className="hidden md:flex gap-8 text-lg font-medium">
           {navItems.map((item) => (
             <li key={item.title} className="hover:text-[color:var(--color-gold-soft)] cursor-pointer transition">
               <a href={item.href}>{item.title}</a>
@@ -54,7 +58,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-[color:var(--color-primary)] border-t border-[color:var(--color-gold-soft)/20]"
+            className="md:hidden overflow-hidden text-xl bg-[color:var(--color-bg)] border-t border-[color:var(--color-gold-soft)/20]"
           >
           <ul className="flex flex-col px-6 py-4 gap-4 text-sm">
             {navItems.map((item) => (
