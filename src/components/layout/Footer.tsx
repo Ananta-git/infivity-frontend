@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="bg-[color:var(--color-primary)] border-t border-[color:var(--color-gold-soft)/20]">
+      <div className="bg-[color:var(--color-surface)] border-t border-[color:var(--color-gold-soft)/20]">
         <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

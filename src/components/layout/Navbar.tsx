@@ -29,17 +29,24 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-lg font-medium">
           {navItems.map((item) => (
-            <li key={item.title} className="hover:text-[color:var(--color-gold-soft)] cursor-pointer transition">
+            <li key={item.title} className="hover:text-primary transition cursor-pointer">
               <a href={item.href}>{item.title}</a>
             </li>
           ))}
         </ul>
 
         {/* Desktop Login */}
-        <button className="hidden md:block rounded-xl border border-[color:var(--color-gold)] px-4 py-1.5 text-sm hover:bg-[color:var(--color-gold)] hover:text-black transition">
+        <button className="
+          rounded-xl
+          bg-[color:var(--color-accent)]
+          px-4 py-2
+          text-black
+          font-medium
+          hover:brightness-105
+          transition
+        ">
           Login
         </button>
-
         {/* Mobile Hamburger */}
         <button
           className="md:hidden text-2xl"
